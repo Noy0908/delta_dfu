@@ -135,6 +135,10 @@ create-patch:
 	$(DETOOLS) $(SOURCE_PATH) $(TARGET_PATH) $(PATCH_PATH)
 	$(PAD_SCRIPT) $(PATCH_PATH) $(MAX_PATCH_SIZE) $(PATCH_HEADER_SIZE)
 
+patch-info:
+	@echo "Print patch information..."
+	detools patch_info $(PATCH_PATH)
+
 apply-patch:
 	@echo "Applying patch..."
 	mkdir -p $(PATCH_DIR)
