@@ -16,7 +16,7 @@
 
 #define SLEEP_TIME_MS	1000
 
-#define FW_VERSION		"1.0.0"
+#define FW_VERSION		"3.0.0"
 
 
 /*
@@ -40,7 +40,7 @@ static bool btnPressFlag = false;
  * The led0 devicetree alias is optional. If present, we'll use it
  * to turn on the LED whenever the button is pressed.
  */
-static struct gpio_dt_spec led = GPIO_DT_SPEC_GET_OR(DT_ALIAS(led0), gpios,{0});
+static struct gpio_dt_spec led = GPIO_DT_SPEC_GET_OR(DT_ALIAS(led3), gpios,{0});
 
 void button_pressed(const struct device *dev, struct gpio_callback *cb, uint32_t pins)
 {
@@ -53,7 +53,7 @@ void main(void)
 {
 	int ret;
 
-	//printk("Congratulations!! Delta DFU test successful!!!!!!\r\n");
+	printk("Congratulations!! Delta DFU test successful!!!!!!\r\n");
 
 	if (!device_is_ready(button.port)) {
 		printk("Error: button device %s is not ready\n", button.port->name);

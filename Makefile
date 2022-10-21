@@ -11,11 +11,11 @@ PY := python
 #MAX_PATCH_SIZE := 0x4000
 #PATCH_HEADER_SIZE := 0x8 
 
-SLOT0_SIZE := 0x68000
-SLOT1_SIZE := 0x68000
+SLOT0_SIZE := 0xa0000
+SLOT1_SIZE := 0x30000
 HEADER_SIZE := 512
 SLOT0_OFFSET := 0x10000
-SLOT1_OFFSET := 0x78000
+SLOT1_OFFSET := 0xb0000
 PATCH_OFFSET := 0xe0000
 MAX_PATCH_SIZE := 0x1c000
 PATCH_HEADER_SIZE := 0x8
@@ -134,10 +134,6 @@ create-patch:
 	rm -f $(PATCH_PATH)
 	$(DETOOLS) $(SOURCE_PATH) $(TARGET_PATH) $(PATCH_PATH)
 	$(PAD_SCRIPT) $(PATCH_PATH) $(MAX_PATCH_SIZE) $(PATCH_HEADER_SIZE)
-
-patch-info:
-	@echo "Print patch information..."
-	detools patch_info $(PATCH_PATH)
 
 apply-patch:
 	@echo "Applying patch..."
