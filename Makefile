@@ -2,11 +2,11 @@ BOARD := nrf9160dk_nrf9160ns
 PY := python 
 
 #device flash map
-SLOT0_SIZE := 0xa0000
-SLOT1_SIZE := 0x50000
+SLOT0_SIZE := 0x68000
+SLOT1_SIZE := 0x68000
 HEADER_SIZE := 512
-SLOT0_OFFSET := 0x10000
-SLOT1_OFFSET := 0xb0000
+SLOT0_OFFSET := 0x28000
+SLOT1_OFFSET := 0x90000
 PATCH_OFFSET := $(SLOT1_OFFSET)
 MAX_PATCH_SIZE := $(SLOT1_SIZE)
 PATCH_HEADER_SIZE := 0x8 
@@ -30,7 +30,7 @@ BIN_DIR := binaries
 IMG_DIR := $(BIN_DIR)/signed_images
 PATCH_DIR := $(BIN_DIR)/patches
 DUMP_DIR := $(BIN_DIR)/flash_dumps
-SOURCE_PATH := $(IMG_DIR)/source.bin
+SOURCE_PATH := $(IMG_DIR)/source_1.0.0.bin
 TARGET_PATH := $(IMG_DIR)/target.bin
 PATCH_PATH := $(PATCH_DIR)/patch.bin
 SIGN_PATCH_PATH := $(PATCH_DIR)/signed_patch.bin
@@ -203,4 +203,5 @@ tools:
 	pip3 install --user pynrfjprog
 	pip3 install --user imgtool
 	pyocd pack install nRF9160_xxAA
+	@echo "If you have installed pyocd but version is lower than 0.34.1, you need to upgrade it , enter \"pip install --upgrade pyocd\" command to upgrade it."
 	@echo "Done"
