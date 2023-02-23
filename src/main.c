@@ -20,7 +20,7 @@
 
 #if defined(CONFIG_NRF_CLOUD_AGPS) || defined(CONFIG_NRF_CLOUD_PGPS)
 #include <net/nrf_cloud_agps.h>
-
+#endif
 
 /* Module name is used by the Application Event Manager macros in this file */
 #define MODULE main
