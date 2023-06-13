@@ -39,7 +39,7 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/logging/log_ctrl.h>
 
-#define FW_VERSION		"1.0.0"
+#define FW_VERSION		"2.0.0"
 
 LOG_MODULE_REGISTER(MODULE, CONFIG_APPLICATION_MODULE_LOG_LEVEL);
 

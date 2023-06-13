@@ -2,11 +2,11 @@ BOARD := nrf9160dk_nrf9160ns
 PY := python 
 
 #device flash map
-SLOT0_SIZE := 0x68000
-SLOT1_SIZE := 0x68000
+SLOT0_SIZE := 0xa8000
+SLOT1_SIZE := 0x28000
 HEADER_SIZE := 512
 SLOT0_OFFSET := 0x28000
-SLOT1_OFFSET := 0x90000
+SLOT1_OFFSET := 0xd0000
 PATCH_OFFSET := $(SLOT1_OFFSET)
 MAX_PATCH_SIZE := $(SLOT1_SIZE)
 PATCH_HEADER_SIZE := 0x8 
@@ -31,7 +31,7 @@ IMG_DIR := $(BIN_DIR)/signed_images
 PATCH_DIR := $(BIN_DIR)/patches
 DUMP_DIR := $(BIN_DIR)/flash_dumps
 SOURCE_PATH := $(IMG_DIR)/source_1.0.0.bin
-TARGET_PATH := $(IMG_DIR)/target.bin
+TARGET_PATH := $(IMG_DIR)/target_2.0.0.bin
 PATCH_PATH := $(PATCH_DIR)/patch.bin
 SIGN_PATCH_PATH := $(PATCH_DIR)/signed_patch.bin
 #SIGN_PATCH_PATH := $(PATCH_DIR)/signed_patch_from_1.1.5_to_3.1.0.bin
